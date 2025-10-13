@@ -22,11 +22,11 @@ jobs:
 
       - name: Login to Amazon ECR
         run: |
-          aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 960452239089.dkr.ecr.us-east-1.amazonaws.com
+          aws ecr get-login-password --region eu-north-1 | docker login --username AWS --password-stdin 970271754522.dkr.ecr.eu-north-1.amazonaws.com
 
       - name: Build, tag, and push image to Amazon ECR
         run: |
-          docker build -t mediplus:v1 .
-          docker tag mediplus:v1 960452239089.dkr.ecr.us-east-1.amazonaws.com/mediplus:v1
-          docker push 960452239089.dkr.ecr.us-east-1.amazonaws.com/mediplus:v1
+          docker build -t mediplus-repo .
+          docker tag mediplus-repo:latest 970271754522.dkr.ecr.970271754522.dkr.ecr.eu-north-1.amazonaws.com/mediplus-repo:latest
+          docker tag mediplus-repo:latest 970271754522.dkr.ecr.970271754522.dkr.ecr.eu-north-1.amazonaws.com/mediplus-repo:latest
 
