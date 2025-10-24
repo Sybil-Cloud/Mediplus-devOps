@@ -40,4 +40,4 @@ jobs:
           docker pull ${{ steps.login-ecr.outputs.registry }}/${{ secrets.ECR_REPOSITORY }}:latest
           docker stop mediplus-container || true
           docker rm mediplus-container || true
-          docker run -d -p 80:80 --name mediplus-container ${{ steps.login-ecr.outputs.registry }}/${{ secrets.ECR_REPOSITORY }}:latest
+          docker run -d -p 8080:80 --name mediplus-container ${{ steps.login-ecr.outputs.registry }}/${{ secrets.ECR_REPOSITORY }}:latest
