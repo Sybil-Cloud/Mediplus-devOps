@@ -11,6 +11,8 @@ jobs:
     steps:
     - name: Checkout Code
       uses: actions/checkout@v3
+       fetch-depth:0
+        submodules:false
 
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v2
